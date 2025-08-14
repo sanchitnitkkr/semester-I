@@ -50,12 +50,12 @@ int main() {
     // 1) %6f : This prints an output where the minimum width is 6
     printf("The temperature currently is %6f\n", temperature);
     
-    // 2) %6.2f : This prints an output where the min width is 6 places (including decimal) and after decimal upto 2 ie precision is 2
+    // 2) %6.2f : This prints an output where the min width is 10 places and after decimal 2 numbers only i.e. precision is 2
     float someScientificNumber = 233.5346;
-    printf("The scientific number is currently is: %6.2f\n", someScientificNumber);
+    printf("The scientific number is currently is: %10.2f\n", someScientificNumber);
     
-    // 3) %.2f: This prints an output where there are only 2 numbers after the decimal place ie precision is 2
-    printf("The scientific number is: %.2f",someScientificNumber);
+    // 3) %.2f: This prints an output where there are only 2 numbers after the decimal place i.e. precision is 2
+    printf("The scientific number is: %.2f\n",someScientificNumber);
     
 
     return 0;
