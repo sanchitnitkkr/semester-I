@@ -43,12 +43,12 @@ int main() {
     printf("my age in hexadecimal is %x\n", ageInHexaDec);
     
     // For reading integers with space padded to them
-    printf("My age with padding of 4 spaces to the left padded %6d\n", age);
+    printf("My age with padding of 4 spaces to the left padded:%6d\n", age);
     
     // For reading float numbers
     float temperature = 102.256;
     // 1) %6f : This prints an output where the minimum width is 6
-    printf("The temperature currently is %6f\n", temperature);
+    printf("The temperature currently is:%6f\n", temperature);
     
     // 2) %10.2f : This prints an output where the min width is 10 places and after decimal 2 numbers only i.e. precision is 2
     float someScientificNumber = 233.5346;
