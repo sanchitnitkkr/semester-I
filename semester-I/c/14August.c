@@ -60,3 +60,17 @@ int main() {
 
     return 0;
 }
+
+/**
+ * Output was:
+My initials are ST
+My name is Sanchit
+My age is 23
+I am 5.610000 inches tall
+My age in octal number system is 27
+my age in hexadecimal is 17
+My age with padding of 4 spaces to the left padded     23
+The temperature currently is 102.255997
+The scientific number is currently is: 233.53
+The scientific number is: 233.53
+ */
