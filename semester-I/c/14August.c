@@ -55,7 +55,7 @@ int main() {
     printf("The scientific number is currently is: %10.2f\n", someScientificNumber);
     
     // 3) %.2f: This prints an output where there are only 2 numbers after the decimal place i.e. precision is 2
-    printf("The scientific number is: %.2f\n",someScientificNumber);
+    printf("The scientific number is:%.2f\n",someScientificNumber);
     
 
     return 0;
