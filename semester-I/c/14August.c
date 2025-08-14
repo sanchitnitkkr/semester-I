@@ -50,7 +50,7 @@ int main() {
     // 1) %6f : This prints an output where the minimum width is 6
     printf("The temperature currently is %6f\n", temperature);
     
-    // 2) %6.2f : This prints an output where the min width is 10 places and after decimal 2 numbers only i.e. precision is 2
+    // 2) %10.2f : This prints an output where the min width is 10 places and after decimal 2 numbers only i.e. precision is 2
     float someScientificNumber = 233.5346;
     printf("The scientific number is currently is: %10.2f\n", someScientificNumber);
     
