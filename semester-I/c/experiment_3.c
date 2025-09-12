@@ -14,6 +14,7 @@
 
 int main()
 {
+    printf("Experiment 3 [Sanchit Tewari 525110030]\n");
     char name[] = "";
     int age;
     char gender;

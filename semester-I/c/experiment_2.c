@@ -5,6 +5,7 @@
 
 int main()
 {
+    printf("Expirement 2 [Sanchit Tewari 525110030]\n");
     printf("Enter the suitable character for your age:\n");
     printf("A => Adult\n");
     printf("T => Teenager\n");
@@ -23,4 +24,3 @@ int main()
 
     return 0;
 }
-

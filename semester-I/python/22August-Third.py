@@ -68,12 +68,12 @@ gap()
 # COMPARSION OPERATORS
 a,b,c = 20,30,40
 
-print(a==b) # False
-print(a!=b) # True
-print(a>b) # False
-print(a<b) # True
-print(a>=b) # False
-print(a<=b) # True
+print(a==b) # Equal
+print(a!=b) # Not Equal
+print(a>b) # Greater
+print(a<b) # Lesser
+print(a>=b) # Greater than or equal to
+print(a<=b) # Lesser than or equal to
 
 gap()
 
@@ -98,6 +98,8 @@ gap()
 # BITWISE OPERATORS
 a = 5
 b = 3
+
+# Write a program to print the multiplication table of a given number
 
 print(a & b) # BIT AND Operation
 print(a|b) # BIT OR Operation

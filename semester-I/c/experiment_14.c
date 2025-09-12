@@ -9,7 +9,6 @@ void isPrime(int num)
         return;
     }
 
- 
     for (int i = 2; i < sqrt(num); i++)
     {
         if (num % i == 0)
@@ -18,15 +17,16 @@ void isPrime(int num)
             return;
         }
     }
-    
+
     printf("The number is a prime number\n");
 }
 
 int main()
 {
+    printf("Experiment 14 [Sanchit Tewari 525110030]\n");
     printf("Enter the number for which you want to check the primeness\n");
     int num;
-    scanf("%d",&num);
+    scanf("%d", &num);
     isPrime(num);
     return 0;
 }

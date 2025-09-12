@@ -13,6 +13,7 @@ int factorial(int N)
 
 int main()
 {
+    printf("Experiment 15 [Sanchit Tewari 525110030]\n");
     printf("Enter the number whose factorial you want to know\n");
     int N;
     scanf("%d", &N);

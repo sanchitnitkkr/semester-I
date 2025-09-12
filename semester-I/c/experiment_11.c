@@ -2,6 +2,7 @@
 
 int main()
 {
+    printf("Experiment 11 [Sanchit Tewari 525110030]\n");
     int a, b;
     printf("Enter the 2 numbers space separated (For ex 2 3)\n");
     scanf("%d %d", &a, &b);

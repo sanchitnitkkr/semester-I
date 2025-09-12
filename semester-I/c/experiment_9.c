@@ -15,8 +15,9 @@ void isEven(int num)
 
 int main()
 {
+    printf("Experiment 9 [Sanchit Tewari 525110030]\n");
     printf("Enter the number\n");
-    int num; 
+    int num;
     scanf("%d", &num);
     isEven(num);
 }

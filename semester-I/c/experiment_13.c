@@ -14,6 +14,7 @@ int getPositiveIntInput()
 
 int main()
 {
+    printf("Experiment 13 [Sanchit Tewari 525110030]\n");
     getPositiveIntInput();
     return 0;
 }

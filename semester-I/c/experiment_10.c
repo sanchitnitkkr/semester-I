@@ -18,9 +18,10 @@ int largest(int num1, int num2, int num3)
 
 int main()
 {
+    printf("Experiment 10 [Sanchit Tewari 525110030]\n");
     printf("Enter the 3 numbers space separated\n");
-    int a,b,c;
-    scanf("%d %d %d", &a,&b,&c);
-    largest(a,b,c);
+    int a, b, c;
+    scanf("%d %d %d", &a, &b, &c);
+    largest(a, b, c);
     return 0;
 }
