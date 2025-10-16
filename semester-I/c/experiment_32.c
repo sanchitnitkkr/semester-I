@@ -3,6 +3,7 @@
 
 int main()
 {
+    printf("Experiment 32 [Sanchit Tewari 525110030]\n");
     char alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     printf("Length => %zu\n", strlen(alphabet)); // For getting the length. Same as sizeof except doesn't include the null character
 

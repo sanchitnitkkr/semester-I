@@ -3,6 +3,7 @@
 
 int main()
 {
+    printf("Experiment 33 [Sanchit Tewari 525110030]\n");
     char alphabets[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     char charToCount = 'A';
     int counter = 0;

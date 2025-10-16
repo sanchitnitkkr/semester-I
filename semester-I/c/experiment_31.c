@@ -2,6 +2,7 @@
 
 int main()
 {
+    printf("Experiment 31 [Sanchit Tewari 525110030]\n");
     int rows = 3;
     int columns = 3;
     int arr1[3][3] = {1, 2, 3, 4, 5, 6, 7, 8, 9};

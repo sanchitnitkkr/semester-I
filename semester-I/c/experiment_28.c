@@ -24,6 +24,7 @@ void printArray(int arr[], int size)
 int main()
 {
 
+    printf("Experiment 28 [Sanchit Tewari 525110030]\n");
     int arr[] = {10, 50, 30, 40};
     int size = sizeof(arr) / sizeof(int);
     int indexToBeRemoved = 2;
