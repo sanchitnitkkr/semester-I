@@ -3,6 +3,7 @@
 
 int main()
 {
+    printf("Experiment 37 [Sanchit Tewari 525110030]\n");
     char alphabets[] = "ABCDAHHHAACXZ";
     char charToBeRemoved = 'A';
     int fp = 0;

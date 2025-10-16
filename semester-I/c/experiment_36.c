@@ -3,6 +3,7 @@
 
 int main()
 {
+    printf("Experiment 36 [Sanchit Tewari 525110030]\n");
     char src[] = "Hello";
     char str2[50];
 

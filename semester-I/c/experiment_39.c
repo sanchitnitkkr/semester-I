@@ -2,6 +2,7 @@
 #include <string.h>
 
 int main(){
+    printf("Experiment 39 [Sanchit Tewari 525110030]\n");
     char string[] = "";
     printf("Enter the string => ");
     scanf("%199[^\n]", string);
