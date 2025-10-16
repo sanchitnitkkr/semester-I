@@ -18,6 +18,7 @@ void reverseString(char sentence[], int size)
 
 int main()
 {
+    printf("Experiment 35 [Sanchit Tewari 525110030]\n");
     char sentence[] = "";
     printf("Enter the string please: ");
     scanf("%199[^\n]", sentence); //   fgets(sentence, sizeof(sentence), stdin);  // read with spaces => This could had been used which is more recommended since it handles buffer overflow and whitespaces both.

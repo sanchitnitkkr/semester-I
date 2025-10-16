@@ -24,7 +24,14 @@ sliceObject = slice(0,2)
 tuple2 = tuple1[sliceObject]
 print(tuple2)
 
+### Concatenation
+tuple1 = (1,2,3)
+tuple2 = (3,4,5)
+tuple3 = tuple1 + tuple2
 
+#### Tuples can also be duplicated using the * symbol
+#### For example :
+tuple4 = tuple1 * 2 # (1,2,3,1,2,3)
 
 
 
