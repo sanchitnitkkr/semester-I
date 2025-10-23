@@ -55,7 +55,7 @@ int main()
     printf("ADDITION\n");
     printf("(%g + %gi) +  (%g + %gi) = (%g + %gi)\n", num1.real, num1.imaginary, num2.real, num2.imaginary, complexSum.real, complexSum.imaginary);
     printf("SUBTRACTION\n");
-    printf("(%g + %gi) + (%g + %gi) = (%g + %gi)\n", num1.real, num1.imaginary, num2.real, num2.imaginary, complexDiff.real, complexDiff.imaginary);
+    printf("(%g + %gi) - (%g + %gi) = (%g + %gi)\n", num1.real, num1.imaginary, num2.real, num2.imaginary, complexDiff.real, complexDiff.imaginary);
 
     return 0;
 }
