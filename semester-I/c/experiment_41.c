@@ -45,7 +45,7 @@ int main()
     scanf("%f", &num2.imaginary);
 
     printf("Complex number 1 => %g + %gi\n", num1.real, num1.imaginary);
-    printf("Complex number 2 => %g + %gi\n", num1.real, num1.imaginary);
+    printf("Complex number 2 => %g + %gi\n", num2.real, num2.imaginary);
 
     printf("The required operations's result are as follows:\n");
 
