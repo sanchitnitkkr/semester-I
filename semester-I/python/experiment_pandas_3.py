@@ -1,15 +1,18 @@
 import pandas as pd
 
-data = {
-    "Dept": ["CSE", "CSE", "IT", "IT", "ECE", "ECE"],
-    "Student": ["A", "B", "C", "D", "E", "F"],
-    "Marks": [85, 90, 78, 92, 88, 80],
+sales = {
+    "Product": ["Pen","Book","Pencil","Eraser"],
+    "Price": [10,50,5,8],
+    "Quantity": [20,10,50,30],
 }
 
-df = pd.DataFrame(data)
+df = pd.DataFrame(sales)
 
-#1. Display students having marks greater than 85.
-print(df[df["Marks"] > 85])
+# Add a new column Total = Price * Quantity
+df["Total"] = df["Price"] * df["Quantity"]
 
-# 2. Find the average marks per department using groupby() and mean().
-print(df.groupby("Dept")["Marks"].mean())
+# Increase all prices by 10%
+df["Price"] = df["Price"] +  (df["Price"] * 0.1)
+
+# Delete the quantity column
+df.drop("Quantity",axis=1)

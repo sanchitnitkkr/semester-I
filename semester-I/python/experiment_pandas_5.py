@@ -12,16 +12,15 @@ df = pd.DataFrame(data)
 
 
 # 1. Display the highest salary in each department.
-# print(df.groupby('Department')["Salary"].max())
+print(df.groupby('Department')["Salary"].max())
 
 
 # 2. Find the average experience by department.
-# print(df.groupby("Department")[["Experience"]].mean())
+print(df.groupby("Department")[["Experience"]].mean())
 
 # 3. Add a new column Bonus = 0.1 * Salary only for employees with Experience > 3.
 df.loc[df["Experience"] > 3, "Bonus"] = 0.1 * df["Salary"]
 
-# print(df)
 # 4. Show the department with the maximum total salary.
 result = df.groupby("Department")["Salary"].sum()
-print("Department with max total salary:", result)
+print("Department with max total salary:", result.idxmax())
