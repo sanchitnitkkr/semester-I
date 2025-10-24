@@ -31,4 +31,4 @@ df["Bonus"] = df[["Experience","Salary"]].apply(lambda row: row["Salary"] * 0.1 
 
 # 4. Show the department with the maximum total salary.
 result = df.groupby("Department")["Salary"].sum()
-# print("Department with max total salary:", result.idxmax())
+print("Department with max total salary:", result.idxmax())
