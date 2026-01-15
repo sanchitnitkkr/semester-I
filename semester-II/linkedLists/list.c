@@ -15,18 +15,19 @@ int size(Node *head)
 }
 Node *appendAtIndex(Node *head, int data, int size, int index)
 {
-    if (index >= size || index < 0)
+    if (index > size || index < 0)
     {
-        printf("INVALID INDEX!!!");
+        printf("INVALID INDEX!!!\n");
         return head;
     }
     if (index == 0)
     {
         return unshiftHead(head, data);
     }
-    else if (index == size - 1)
+    else if (index == size)
     {
-        return append(head, data);
+        append(head, data);
+        return head;
     }
     else
     {
