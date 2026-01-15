@@ -3,9 +3,9 @@
 
 int isFileEmpty(FILE *fp)
 {
-    fseek(fp, 0, SEEK_END);    // Move to the end of the file
-    long fileSize = ftell(fp); // Get the current position (number of bytes)
-    rewind(fp);                // Move back to the beginning
+    fseek(fp, 0, SEEK_END);   
+    long fileSize = ftell(fp); 
+    rewind(fp);               
 
     if (fileSize > 0)
     {

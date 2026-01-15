@@ -8,15 +8,15 @@ sales = {
 
 df = pd.DataFrame(sales)
 
-print(df)
+# print(df)
 # Add a new column Total = Price * Quantity
 df["Total"] = df["Price"] * df["Quantity"]
-print(df)
+# print(df)
 
 # Increase all prices by 10%
 df["Price"] = df["Price"] +  (df["Price"] * 0.1)
-print(df)
+# print(df)
 
 # Delete the quantity column
-df.drop("Quantity",axis=1)
+df = df.drop("Quantity",axis=1)
 print(df)
