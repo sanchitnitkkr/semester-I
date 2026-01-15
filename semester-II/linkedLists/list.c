@@ -48,12 +48,22 @@ Node *appendAtIndex(Node *head, int data, int size, int index)
     }
 };
 
-Node reverse(Node *head, int ascending)
+Node *reverse(Node *head, int ascending)
 {
-    // if ()
-    //     Node *prevNode = NULL;
+
+    Node *prevNode = NULL;
     Node *currNode = head;
-    // Node *nextNode =
+    Node *nextNode = head->link;
+
+    while (currNode != NULL)
+    {
+        nextNode = currNode->link;
+        currNode->link = prevNode;
+        prevNode = currNode;
+        currNode = nextNode;
+    }
+
+    return currNode;
 }
 
 ListInputReturnType takeListInputFromTheUser()

@@ -29,5 +29,5 @@ void deleteNode(Node *head, int index);
 
 int size(Node *head);
 
-Node reverse(Node *head, int ascending);
+Node *reverse(Node *head, int ascending);
 #endif
