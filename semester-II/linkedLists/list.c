@@ -48,23 +48,136 @@ Node *appendAtIndex(Node *head, int data, int size, int index)
     }
 };
 
+Node *moveLastToFront(Node *head)
+{
+    if (head == NULL || head->link == NULL)
+        return head;
+
+    Node *prevNode = head;
+    Node *currNode = head->link;
+
+    while (currNode->link != NULL)
+    {
+        prevNode = prevNode->link;
+        currNode = currNode->link;
+    }
+
+    prevNode->link = NULL;
+    currNode->link = head;
+    return currNode;
+};
+
 Node *reverse(Node *head, int ascending)
 {
 
     Node *prevNode = NULL;
     Node *currNode = head;
-    Node *nextNode = head->link;
 
     while (currNode != NULL)
     {
-        nextNode = currNode->link;
+        Node *nextNode = currNode->link;
         currNode->link = prevNode;
         prevNode = currNode;
         currNode = nextNode;
     }
 
-    return currNode;
-}
+    return prevNode;
+};
+
+Node *getMiddle(Node *head)
+{
+    if (head == NULL || head->link == NULL)
+    {
+        return head;
+    }
+
+    Node *slow = head;
+    Node *fast = head->link;
+
+    while (slow != NULL && fast->link != NULL)
+    {
+        slow = slow->link;
+        fast = fast->link->link;
+    }
+
+    return slow;
+};
+
+Node *mergeTwoSortedLists(Node *left, Node *right, int ascending)
+{
+    Node *tempNode = malloc(sizeof(Node));
+    tempNode->data = -1;
+    Node *tempIterator = tempNode;
+
+    while (left != NULL && right != NULL)
+    {
+        if (ascending)
+        {
+            if (left->data <= right->data)
+            {
+                tempIterator->link = left;
+                left = left->link;
+            }
+            else
+            {
+                tempIterator->link = right;
+                right = right->link;
+            }
+        }
+        else
+        {
+            if (left->data > right->data)
+            {
+                tempIterator->link = left;
+                left = left->link;
+            }
+            else
+            {
+                tempIterator->link = right;
+                right = right->link;
+            }
+        }
+
+        tempIterator = tempIterator->link;
+    }
+
+    while (left != NULL)
+    {
+        tempIterator->link = left;
+        left = left->link;
+        tempIterator = tempIterator->link;
+    }
+    while (right != NULL)
+    {
+        tempIterator->link = right;
+        right = right->link;
+        tempIterator = tempIterator->link;
+    }
+
+    Node *link = tempNode->link;
+    free(tempNode);
+
+    return link;
+};
+
+Node *sortList(Node *head, int ascending)
+{
+    if (head == NULL || head->link == NULL)
+    {
+        return head;
+    }
+
+    Node *midNode = getMiddle(head);
+
+    Node *right = midNode->link;
+    midNode->link = NULL;
+    Node *left = head;
+
+    left = sortList(left, ascending);
+    right = sortList(right, ascending);
+
+    return mergeTwoSortedLists(left, right, ascending);
+};
 
 ListInputReturnType takeListInputFromTheUser()
 {
@@ -105,7 +218,7 @@ void printLinkedList(Node *head)
 {
     if (head == NULL)
     {
-        printf("\n");
+        printf("\nEnd of list\n");
         return;
     }
     printf("%d ", head->data);
