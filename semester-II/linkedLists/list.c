@@ -48,7 +48,7 @@ Node *appendAtIndex(Node *head, int data, int size, int index)
     }
 };
 
-Node *reverse(Node *head, int ascending)
+Node *reverse(Node *head)
 {
 
     Node *prevNode = NULL;
@@ -63,7 +63,25 @@ Node *reverse(Node *head, int ascending)
         currNode = nextNode;
     }
 
-    return currNode;
+    return prevNode;
+}
+
+Node *moveLastNodeToFirst(Node *head)
+{
+    if (head == NULL || head->link == NULL)
+        return head;
+
+    Node *prevThanTail = NULL;
+    Node *tail = head;
+    while (tail->link != NULL)
+    {
+        prevThanTail = tail;
+        tail = tail->link;
+    }
+    prevThanTail->link = NULL;
+    tail->link = head;
+
+    return tail;
 }
 
 ListInputReturnType takeListInputFromTheUser()
@@ -190,3 +208,14 @@ void deleteNode(Node *head, int index)
     }
     return;
 };
+
+void printList(Node *head)
+{
+    if (!head)
+    {
+        printf("\n");
+        return;
+    }
+    printf("%d ", head->data);
+    printList(head->link);
+}

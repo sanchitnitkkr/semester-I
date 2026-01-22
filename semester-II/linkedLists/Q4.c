@@ -1,8 +1,6 @@
-// Move last node to first node
-
+// WAP to print elements using recursion
 #include <stdio.h>
 #include "list.h"
-
 
 int main()
 {
@@ -10,8 +8,6 @@ int main()
     Node *head = result.head;
     int noOfElements = result.noOfElements;
 
-    head = moveLastNodeToFirst(head);
-    
     printList(head);
     return 0;
 }

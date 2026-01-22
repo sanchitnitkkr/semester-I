@@ -29,5 +29,9 @@ void deleteNode(Node *head, int index);
 
 int size(Node *head);
 
-Node *reverse(Node *head, int ascending);
+Node *reverse(Node *head);
+
+void printList(Node *head);
+
+Node *moveLastNodeToFirst(Node *head);
 #endif

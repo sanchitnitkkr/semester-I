@@ -21,7 +21,7 @@ int main()
             4 - Print list
         */
         int operation = 0;
-        printf("Enter which operation you want:\n-1 - Exit\n1 - Add at beginning\n2 - Add at end\n3 - Remove at ith index\n4 - Insert at ith index\n5 - Print the list\nOperation: ");
+        printf("\nEnter which operation you want:\n-1 - Exit\n1 - Add at beginning\n2 - Add at end\n3 - Remove at ith index\n4 - Insert at ith index\n5 - Print the list\nOperation: ");
         scanf("%d", &operation);
 
         switch (operation)
@@ -36,7 +36,7 @@ int main()
             scanf("%d", &data);
             // Add the element in starting and update the head
             head = unshiftHead(head, data);
-            printLinkedList(head);
+            printList(head);
             printf("----Operation Ended----\n");
             break;
         }
@@ -50,7 +50,7 @@ int main()
             scanf("%d", &data);
             // Add the element in ending
             append(head, data);
-            printLinkedList(head);
+            printList(head);
             printf("----Operation Ended----\n");
             break;
         }
@@ -67,7 +67,7 @@ int main()
             }
             // Delete element at index
             deleteNode(head, index);
-            printLinkedList(head);
+            printList(head);
             printf("----Operation Ended----\n");
             break;
         }
@@ -83,7 +83,7 @@ int main()
             printf("Enter the element to add at index %d: ", index);
             scanf("%d", &data);
             head = appendAtIndex(head, data, size(head), index);
-            printLinkedList(head);
+            printList(head);
             printf("----Operation Ended----\n");
             break;
         }
@@ -92,7 +92,7 @@ int main()
             printf("=====================\n");
             printf("Operation 5 selected!\n");
             printf("=====================\n");
-            printLinkedList(head);
+            printList(head);
             printf("----Operation Ended----\n");
             break;
         }

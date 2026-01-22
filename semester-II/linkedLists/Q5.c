@@ -1,8 +1,6 @@
-// Move last node to first node
-
+// Reverse linked list using iteration
 #include <stdio.h>
 #include "list.h"
-
 
 int main()
 {
@@ -10,8 +8,9 @@ int main()
     Node *head = result.head;
     int noOfElements = result.noOfElements;
 
-    head = moveLastNodeToFirst(head);
-    
+    head = reverse(head);
+
     printList(head);
+    
     return 0;
 }
