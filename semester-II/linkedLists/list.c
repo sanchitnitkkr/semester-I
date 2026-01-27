@@ -50,14 +50,15 @@ Node *appendAtIndex(Node *head, int data, int size, int index)
 
 Node *reverse(Node *head)
 {
+    if (head == NULL || head->link == NULL)
+        return head;
 
     Node *prevNode = NULL;
     Node *currNode = head;
-    Node *nextNode = head->link;
 
     while (currNode != NULL)
     {
-        nextNode = currNode->link;
+        Node *nextNode = currNode->link;
         currNode->link = prevNode;
         prevNode = currNode;
         currNode = nextNode;
