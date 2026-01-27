@@ -78,11 +78,11 @@ Node *deleteAtPos(Node *head, int pos)
     {
         while (curr->link != head)
         {
-            curr = curr->link;
+            curr = curr->link; // tail
         }
 
         Node *temp = head;
-        if (head->link == head)
+        if (head->link == head) // single node
         {
             free(head);
             return NULL;
@@ -161,12 +161,12 @@ int main()
            3 - Remove at ith index
            4 - Print list
        */
-    int operation = 0;
-    printf("\nEnter which operation you want:\n-1 - Exit\n1 - Add at beginning\n2 - Add at end\n3 - Remove at ith index\n4 - Print the list\nOperation: ");
-    scanf("%d", &operation);
-
-    while (1)
-    {
+      
+      while (1)
+      {
+        int operation = 0;
+        printf("\nEnter which operation you want:\n-1 - Exit\n1 - Add at beginning\n2 - Add at end\n3 - Remove at ith index\n4 - Print the list\nOperation: ");
+        scanf("%d", &operation);
         switch (operation)
         {
         case 1:
