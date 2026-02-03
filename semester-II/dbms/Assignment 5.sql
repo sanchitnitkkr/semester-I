@@ -1,0 +1,17 @@
+-- Assignment–5
+-- Create table and insert appropriate records.
+-- S (Salesperson table) (Sno, Sname, City)
+-- P (Part table) (Pno, Pname, Color)
+-- SP(Sno, Pno, Qty)
+-- 1. Identify primary and foreign keys in each of these tables and create all the tables.
+-- 2. Violate the foreign key constraint and identify the oracle errors.
+-- 3. Delete record of supplier S1 from S table and write a note on the output of query.
+-- 4. Get Qty supplied for Red parts and get Sname supplying Red part.
+-- 5. For each part supplied get part number and names of all cities supplying the part.
+-- 6. Get all pairs of suppliers numbers such that the two suppliers are located in the same city.
+-- 7. Drop table SP and create another table SP1 with delete cascade foreign key option
+-- 8. Delete record of supplier S1 from S table and write a note on the output of query.
+-- 9. Drop table SP1 and create another table SP2 with delete set null option of foreign key.
+-- 10. Delete record of supplier S1 from S table and write a note on the output of query.
+-- 11. Alter table SP2 and drop existing foreign key constraint.
+-- 12. Add foreign key constraint with alter table option with on delete set default option.

@@ -1,0 +1,10 @@
+-- PL/SQL Lab Assignment 9
+-- 1. WAP to print name of employees belonging to deptno 10.
+-- 2. WAP to find top 5 highest paid employees
+-- 3. Perform Q1 & 2 with cursor for loop.
+-- 4. Write a PL/SQL block that calculate simple interest for principal 1000, time 2
+-- years and rate of interest varies from 5 to 15. Store the computed information in
+-- following table:
+-- Principal | time | rate | interest
+-- 5.Write a PL/SQL block to print name of employees belonging of a particular
+-- department, the user will supply the value of deptno during run time.

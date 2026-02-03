@@ -1,0 +1,19 @@
+-- Assignment–6
+-- Create table and Insert appropriate records.
+-- S(Sno, Sname, City, Status)
+-- P(Pno, Pname, Color, Weight)
+-- SP( Sno, Pno, Qty)
+-- a) Apply Column level constraints on City such that it may be only “Amritsar”, “Delhi”,
+-- “Batala” and “Qadian”.
+-- b) Apply Column level constraints such that Qty should be between 100 to1000, Weight
+-- is NOT NULL, Sname is NOT NULL and Pname is UNIQUE.
+-- c) Get supplier name who supply at least one red part.
+-- d) Get supplier number who supplies maximum quantity.
+-- e)Get supplier number who supply quantity greater than average quantity.
+-- f) Increase the Quantity of part P1 by 10%..
+-- g)Get total number of parts supplied by supplier S1.
+-- h) Count the parts having red color.
+-- i) Count red parts supplied by Ajay.
+-- j) Get the total quantity supplied by S1.
+-- k) Change the color of Red parts supplied by Ajay to Green.
+-- l) Delete all the entries of part P1.

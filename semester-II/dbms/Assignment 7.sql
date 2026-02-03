@@ -1,0 +1,15 @@
+-- PL/SQL Lab Assignment-7
+-- 1) Write a PL/SQL block to find the sum of two numbers.
+-- 3) Write a PL/SQL block to find the larger of two numbers
+-- 4) Write a PL/SQL block to find the geatest of three numbers
+-- 5) Write a PL/SQL block to calculate fine for rno 100
+-- Rno, bookno, doi, dor, fine
+-- Fine is Rs 1 if days<7
+-- Fine is Rs 2 if days<14 and >7
+-- Fine is Rs 3 if days>14
+-- Amount mentioned is for each day.
+-- 4. Write a PL/SQL block to calculate fine for all students
+-- Rno, bookno, doi, dor, fine
+-- Fine is Rs 1 if days7 Fine is Rs 3 if days>14 Amount mentioned is for
+-- each day.
+-- 6) Write a PL/SQL block to generate multiplication table for 3 to n.

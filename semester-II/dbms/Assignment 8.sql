@@ -1,0 +1,15 @@
+-- PL/SQL Lab Assignment–8
+-- 1. Write a PL/SQL block to update total sal for empno 100.
+-- Eno,ename, bp,da,hra,total.
+-- 2. Write a PL/SQL block to update total sal for all employees.
+-- Eno,ename, bp,da,hra,total.
+-- 3. Add exception handlers in PL/SQL block created earlier to update total sal for
+-- empno 100. (Eno,ename, bp,da,hra,total.)
+-- 4. Add exception handlers in a block which contain an insert statement for the
+-- following errors:
+--   violation of check constraint,
+--   violation of primary key,
+--   violation of foreign key,
+--   violation of supplied value larger than the specified width of the column.
+-- 5. Write a PL/SQL in which user defined exception is trapped when date of issue is
+-- greater than date of return. (rno, bookno, doi, dor)

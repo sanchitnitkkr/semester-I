@@ -1,0 +1,10 @@
+-- PL/SQL Lab Assignment 10
+-- 1. Write a stored procedure to calculate addition, subtraction, multiplication and
+-- division of two numbers. Call this procedure from a block. Write a local
+-- procedure for the same.
+-- 2. Write functions and procedures to perform Insert, Update, Delete and Retrieve
+-- operations on emp.
+-- 3. Write a trigger to implement primary key constraint and foreign key constraint.
+-- 4. Write a trigger such that no updation on emp can takes place on Sunday.
+-- 5. Write a trigger such that commission cannot be greater than sal.
+-- (eno, ename, job, sal, comm., dno)
