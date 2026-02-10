@@ -9,8 +9,8 @@ int main()
     {
         int operation;
         printf("What do you want to do?\n");
-        printf("1 -> PUSH\n");
-        printf("2 -> POP\n");
+        printf("1 -> ENQUEUE\n");
+        printf("2 -> DEQUEUE\n");
         printf("3 -> PRINT\n");
         printf("-1 -> EXIT\n");
         scanf("%d", &operation);

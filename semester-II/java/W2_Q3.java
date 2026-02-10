@@ -1,3 +1,4 @@
+
 public class W2_Q3 {
 
     public static boolean isPrime(int n) {

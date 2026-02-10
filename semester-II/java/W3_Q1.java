@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 class Rectangle {
@@ -25,5 +26,6 @@ public class W3_Q1 {
 
         Rectangle r1 = new Rectangle(len, breadth);
         System.out.println("Area => " + r1.area());
+        sc.close();
     }
 }

@@ -84,6 +84,29 @@ int getFront(Queue *q)
     }
     return q->arr[q->front];
 }
+void printQueue(Queue *q)
+{
+    if (isEmpty(q))
+    {
+        printf("Queue is empty\n");
+        return;
+    }
+
+    printf("Queue elements: ");
+
+    int i = q->front;
+    while (1)
+    {
+        printf("%d ", q->arr[i]);
+
+        if (i == q->rear)
+            break;
+
+        i = (i + 1) % q->capacity;
+    }
+
+    printf("\n");
+}
 
 int main()
 {
