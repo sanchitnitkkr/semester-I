@@ -55,5 +55,38 @@ ALTER TABLE emp
 MODIFY ename VARCHAR(100) NOT NULL;
 
 -- 2. Create table S (Salesperson table) which has the following attributes (sno, sname, city) Where sno is primary key.
+CREATE TABLE sales_persons (
+	s_no BIGINT PRIMARY KEY AUTO_INCREMENT,
+    s_name VARCHAR(100) NOT NULL,
+    city VARCHAR(100) NOT NULL
+);
 
+-- Create table P (Part table) which has the following attributes (pno, pname, color) Where pno is primary key
+CREATE TABLE parts (
+	p_no BIGINT PRIMARY KEY AUTO_INCREMENT,
+    p_name VARCHAR(100) NOT NULL,
+    color VARCHAR(100) NOT NULL
+);
+-- Create table SP which has the following attributes (sno, pno qty) Where combination of (sno, pno) is primary key, also sno and pno are foreign keys.
+CREATE TABLE sp (
+	s_no BIGINT,
+    p_no BIGINT,
+    CONSTRAINT s_no_fk 
+    FOREIGN KEY (s_no) REFERENCES sales_persons(s_no),
+    CONSTRAINT p_no_fk
+    FOREIGN KEY (p_no) REFERENCES parts(p_no),
+    qty INT UNSIGNED
+);
 
+-- a)Insert appropriate records and violate the foreign key constraint and identify the errors messages.
+INSERT INTO sp VALUES (2, 4, 10); 
+-- Error Code: 1452. Cannot add or update a child row: a foreign key constraint fails (`college`.`sp`, CONSTRAINT `s_no_fk` FOREIGN KEY (`s_no`) REFERENCES `sales_persons` (`s_no`))
+
+-- b) Drop the Foreign Key constraint on sno and pno.
+ALTER TABLE sp
+DROP CONSTRAINT s_no_fk;
+
+ALTER TABLE sp
+DROP CONSTRAINT p_no_fk;
+-- c) Alter table SP and drop existing foreign key constraint.
+INSERT INTO sp VALUES (2, 4, 10); 

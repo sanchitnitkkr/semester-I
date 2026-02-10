@@ -14,8 +14,6 @@
 -- who are going to depart in next one hour.
 
 
-
-
 -- Display the system date, current day, current month and spell out year, spell out current date,
 -- round the system date on month, display the date of next Friday, truncate the system date on
 -- month, find the day after three days, and also check whether it is AM or PM right now.
@@ -24,6 +22,7 @@ CURDATE() as "Current Date",
 MONTH(CURDATE()) as "Current Month",
 DATE_FORMAT(CURDATE(), '%M') as "Current Month in Text",
 DATE_FORMAT(CURDATE(), "%Y") as "Current Year in Text",
+DATE_FORMAT(CURDATE(), "%M %d, %Y") as "Spelled out current date",
 CASE
 WHEN DAY(CURDATE()) < 15
   THEN DATE_FORMAT(CURDATE(), '%Y-%m-01')
@@ -69,6 +68,3 @@ VALUES
 -- who are going to depart in next one hour.
 SELECT * FROM trains WHERE time_of_arrival >= '12:00:00';
 SELECT train_number FROM trains WHERE time_of_departure <= CURTIME() + INTERVAL 1 HOUR AND time_of_departure>= CURTIME();
-
-
-  
