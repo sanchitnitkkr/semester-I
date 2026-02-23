@@ -1,3 +1,4 @@
+package labFiles;
 // WAP to count all substrings of CODING
 
 public class W2_Q9 {

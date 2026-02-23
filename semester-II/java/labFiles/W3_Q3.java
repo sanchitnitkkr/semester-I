@@ -1,3 +1,4 @@
+package labFiles;
 class Box {
     int length, breadth, height;
 

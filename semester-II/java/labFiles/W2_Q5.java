@@ -1,3 +1,4 @@
+package labFiles;
 
 public class W2_Q5 {
     static int factorial(int N) {

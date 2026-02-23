@@ -21,6 +21,13 @@
 -- 1. Create table emp which has the following attributes(empno, ename, job,sal, deptno) Where
 -- empno is primary key, ename is unique, job in (Prof, AP, and Lect), sal is not NULL, and
 -- deptno default is 10.
+
+DROP TABLE IF EXISTS emp;
+DROP TABLE IF EXISTS sp;
+DROP TABLE IF EXISTS supplier_by_parts2;
+DROP TABLE IF EXISTS parts;
+DROP TABLE IF EXISTS sales_persons;
+
 CREATE TABLE emp (
 	empno BIGINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 	ename VARCHAR(50) UNIQUE NOT NULL,
@@ -39,10 +46,14 @@ VALUES
 ('Bob', 'ap', 85000, 40),
 ('Charlie', 'lecturer', 60000, 20),
 ('Diana', 'ap', 90000, 30),
-('Ethan', 'lecturer', 65000, 50);
+('Ethan', 'lecturer', 65000, 50)
+('Frank', 'professor', 130000);
+
+INSERT INTO emp (ename, job)
+VALUES ('Frank', 'professor'); -- SQL Error [1364] [HY000]: Field 'salary' doesn't have a default value
 
 INSERT INTO emp (ename, job, salary)
-VALUES ('Frank', 'professor', 130000);
+VALUES ('Frank', 'professor', 50000); -- SQL Error [1062] [23000]: Duplicate entry 'Frank' for key 'emp.ename'
 
 -- Check the constraint name for applied constraints
 SELECT CONSTRAINT_NAME, CONSTRAINT_TYPE FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS WHERE TABLE_NAME = "emp";
@@ -67,10 +78,13 @@ CREATE TABLE parts (
     p_name VARCHAR(100) NOT NULL,
     color VARCHAR(100) NOT NULL
 );
+
 -- Create table SP which has the following attributes (sno, pno qty) Where combination of (sno, pno) is primary key, also sno and pno are foreign keys.
 CREATE TABLE sp (
 	s_no BIGINT,
     p_no BIGINT,
+    CONSTRAINT sp_pk 
+    PRIMARY KEY (s_no, p_no),
     CONSTRAINT s_no_fk 
     FOREIGN KEY (s_no) REFERENCES sales_persons(s_no),
     CONSTRAINT p_no_fk
@@ -88,5 +102,6 @@ DROP CONSTRAINT s_no_fk;
 
 ALTER TABLE sp
 DROP CONSTRAINT p_no_fk;
+
 -- c) Alter table SP and drop existing foreign key constraint.
 INSERT INTO sp VALUES (2, 4, 10); 

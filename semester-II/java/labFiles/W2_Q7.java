@@ -1,3 +1,4 @@
+package labFiles;
 
 class Bike {
     private int speed;
