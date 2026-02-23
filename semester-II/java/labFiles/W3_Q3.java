@@ -1,4 +1,5 @@
 package labFiles;
+
 class Box {
     int length, breadth, height;
 
@@ -28,6 +29,11 @@ class Box {
         boolean heightEqual = this.height == other.height;
 
         return lengthEqual && breadthEqual && heightEqual;
+    }
+
+    @Override
+    public String toString() {
+        return "Box:\nLength=>" + this.length + "\nBreadth:" + this.breadth + "\nHeight=>" + this.height;
     }
 }
 
