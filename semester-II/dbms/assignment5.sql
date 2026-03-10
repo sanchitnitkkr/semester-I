@@ -1,0 +1,109 @@
+DROP TABLE IF EXISTS SP;
+DROP TABLE IF EXISTS P;
+DROP TABLE IF EXISTS S;
+
+CREATE TABLE S (
+    Sno   VARCHAR(5) PRIMARY KEY,
+    Sname VARCHAR(20),
+    City  VARCHAR(20)
+);
+
+CREATE TABLE P (
+    Pno   VARCHAR(5) PRIMARY KEY,
+    Pname VARCHAR(20),
+    Color VARCHAR(10)
+);
+
+CREATE TABLE SP (
+    Sno VARCHAR(5),
+    Pno VARCHAR(5),
+    Qty INT,
+    PRIMARY KEY (Sno, Pno),
+    FOREIGN KEY (Sno) REFERENCES S(Sno),
+    FOREIGN KEY (Pno) REFERENCES P(Pno)
+);
+
+INSERT INTO S VALUES 
+('S1','Ram','Delhi'),
+('S2','Shyam','Mumbai'),
+('S3','Amit','Delhi');
+
+INSERT INTO P VALUES 
+('P1','Bolt','Red'),
+('P2','Nut','Blue'),
+('P3','Screw','Red');
+
+INSERT INTO SP VALUES 
+('S1','P1',100),
+('S1','P3',150),
+('S2','P2',200),
+('S3','P1',300);
+
+SELECT SP.Qty
+FROM SP
+JOIN P ON SP.Pno = P.Pno
+WHERE P.Color = 'Red';
+
+SELECT DISTINCT S.Sname
+FROM S
+JOIN SP ON S.Sno = SP.Sno
+JOIN P ON SP.Pno = P.Pno
+WHERE P.Color = 'Red';
+
+SELECT DISTINCT P.Pno, S.City
+FROM P
+JOIN SP ON P.Pno = SP.Pno
+JOIN S ON SP.Sno = S.Sno
+ORDER BY P.Pno;
+
+SELECT A.Sno, B.Sno, A.City
+FROM S A, S B
+WHERE A.City = B.City
+AND A.Sno < B.Sno;
+
+DROP TABLE SP;
+
+CREATE TABLE SP1 (
+    Sno VARCHAR(5),
+    Pno VARCHAR(5),
+    Qty INT,
+    PRIMARY KEY (Sno, Pno),
+    FOREIGN KEY (Sno) REFERENCES S(Sno) ON DELETE CASCADE,
+    FOREIGN KEY (Pno) REFERENCES P(Pno)
+);
+
+INSERT INTO SP1 VALUES 
+('S1','P1',100),
+('S1','P3',150),
+('S2','P2',200),
+('S3','P1',300);
+
+DELETE FROM S WHERE Sno='S1';
+
+DROP TABLE SP1;
+
+CREATE TABLE SP2 (
+    Sno VARCHAR(5),
+    Pno VARCHAR(5),
+    Qty INT,
+    PRIMARY KEY (Pno),
+    FOREIGN KEY (Sno) REFERENCES S(Sno) ON DELETE SET NULL,
+    FOREIGN KEY (Pno) REFERENCES P(Pno)
+);
+
+INSERT INTO S VALUES ('S1','Ram','Delhi');
+
+INSERT INTO SP2 VALUES 
+('S1','P1',100),
+('S2','P2',200);
+
+DELETE FROM S WHERE Sno='S1';
+
+ALTER TABLE SP2 DROP FOREIGN KEY SP2_ibfk_1;
+
+ALTER TABLE SP2 ALTER Sno SET DEFAULT 'S2';
+
+ALTER TABLE SP2
+ADD FOREIGN KEY (Sno)
+REFERENCES S(Sno)
+ON DELETE SET DEFAULT;

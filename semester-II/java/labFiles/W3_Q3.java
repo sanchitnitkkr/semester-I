@@ -33,7 +33,7 @@ class Box {
 
     @Override
     public String toString() {
-        return "Box:\nLength=>" + this.length + "\nBreadth:" + this.breadth + "\nHeight=>" + this.height;
+        return "Box:\nLength=>" + this.length + "\nBreadth=>" + this.breadth + "\nHeight=>" + this.height;
     }
 }
 
