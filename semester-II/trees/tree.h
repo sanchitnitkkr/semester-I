@@ -11,5 +11,6 @@ typedef struct TreeNode
 
 TreeNode *createTreeFromArray(int *arr, int size);
 TreeNode *getTreeFromUserInput();
+TreeNode *createNode(int data);
 
 #endif

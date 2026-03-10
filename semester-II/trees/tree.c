@@ -20,6 +20,13 @@ TreeNode *createTreeFromArray(int *arr, int size)
     return build(arr, size, 0);
 }
 
+TreeNode *createNode(int data)
+{
+    TreeNode *node = malloc(sizeof(TreeNode));
+    node->data = data;
+    return node;
+}
+
 TreeNode *getTreeFromUserInput()
 {
     printf("Enter no of elements in the tree: ");
