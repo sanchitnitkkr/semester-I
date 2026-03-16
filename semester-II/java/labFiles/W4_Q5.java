@@ -87,7 +87,7 @@ class Cheque {
         return status;
     }
 
-    public void cancelCheque(Cheque cheque) {
+    public void cancelCheque() {
         this.status = Status.CANCELLED;
     }
 }
@@ -181,7 +181,7 @@ class CurrentAccount extends BaseAccount implements CheckBookFacility, Transacti
 
     @Override
     public void cancelCheque(Cheque cheque) throws WithdrawCheckException {
-        this.cancelCheque(cheque);
+        cheque.cancelCheque(cheque);
     }
 
     @Override
@@ -195,6 +195,8 @@ class CurrentAccount extends BaseAccount implements CheckBookFacility, Transacti
 
     @Override
     public void deposit(int depositAmount) throws DepositMoneyException {
+        if (depositAmount <= 0)
+            throw new DepositMoneyException("Invalid deposit amount");
         int updatedBal = getBalance() + depositAmount;
         setBalance(updatedBal);
 
@@ -225,7 +227,7 @@ class SavingsAccount extends BaseAccount implements CompoundInterestFacility, Tr
     @Override
     void imposePenaltyOnLowBalance() {
         if (getBalance() <= 2000) {
-            setBalance(balance - 50);
+            setBalance(getBalance() - 50);
         }
     }
 
