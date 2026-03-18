@@ -65,6 +65,39 @@ END;
 /
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 -- 3) Question 1 with exception handling
 DROP TABLE IF EXISTS employees;
 CREATE TABLE employees (

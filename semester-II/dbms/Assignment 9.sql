@@ -12,6 +12,41 @@
 -- 1. WAP to print name of employees belonging to deptno 10.
 drop table employees cascade constraints;
 drop table departments cascade constraints;
+CREATE TABLE departments (
+    dept_id INT PRIMARY KEY,
+    dept_name VARCHAR(100) NOT NULL
+);
+
+insert into departments (dept_id,dept_name) values (10, 'HR');
+
+
+CREATE TABLE employees (
+    e_no INT PRIMARY KEY,
+    e_name VARCHAR(100) NOT NULL,
+    dept_id INT,
+    FOREIGN KEY (dept_id) REFERENCES departments(dept_id),
+    bp INT DEFAULT 0,
+    da INT DEFAULT 0,
+    hra INT DEFAULT 0,
+    total_salary INT DEFAULT 0
+);
+insert into employees (e_no,e_name,bp,da,hra,total_salary,dept_id) values ( 1,'Rahul',12000,2000,3000,15000,10 );
+
+declare
+   employee_name varchar(100);
+   v_dept_id := &v_dept_id;
+begin
+      FOR rec IN (
+         SELECT e_name FROM employees WHERE dept_id = v_dept_id
+      ) LOOP
+         DBMS_OUTPUT.PUT_LINE(rec.e_name);
+      END LOOP;
+end;
+/
+
+
+drop table employees cascade constraints;
+drop table departments cascade constraints;
 
 create table departments (
    id              int primary key,
@@ -136,3 +171,53 @@ begin
    end loop;
 end;
 /
+
+
+-- 4. Write a PL/SQL block that calculate simple interest for principal 1000, time 2
+-- years and rate of interest varies from 5 to 15. Store the computed information in
+-- following table:
+-- Principal | time | rate | interest
+CREATE table accounts(
+   account_id int primary key,
+   principal int not null,
+   time int not null,
+   roi int not null,
+   interest int default 0,
+   CONSTRAINT chk_roi
+   CHECK (roi BETWEEN 5 AND 15)
+);
+
+BEGIN 
+   UPDATE accounts
+   SET interest = (principal * time * roi) / 100;
+   DBMS_OUTPUT.PUT_LINE('Interest Updated!');
+END;
+/  
+
+-- 5.Write a PL/SQL block to print name of employees belonging of a particular
+-- department, the user will supply the value of deptno during run time.
+CREATE table accounts(
+   account_id int primary key,
+   principal int not null,
+   time int not null,
+   roi int not null,
+   interest int default 0,
+   CONSTRAINT chk_roi
+   CHECK (roi BETWEEN 5 AND 15)
+);
+
+DECLARE
+   v_ename VARCHAR;
+BEGIN 
+    DBMS_OUTPUT.PUT_LINE("Employees belonging to department with ID 10:\n");
+   FOR rec IN (
+      SELECT ename 
+      INTO v_ename
+      FROM employees
+      WHERE dept_id := &dept_id
+   )
+   loop
+     DBMS_OUTPUT.PUT_LINE(rec.ename)
+   end loop;
+END;
+/  
