@@ -24,10 +24,6 @@ CREATE TABLE employees (
    hra int,
    total_salary int
 );
-
-ALTER TABLE EMPLOYEES
-ADD commision INT;
-
 INSERT INTO employees (empNo, ename, basicPay, da, hra) VALUES(100, 'Jasda', 10000, 2000, 3000);
 BEGIN
    UPDATE employees
@@ -67,40 +63,6 @@ BEGIN
 END;
 /
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 -- 3) Question 1 with exception handling
 DROP TABLE IF EXISTS employees;
 CREATE TABLE employees (
@@ -130,34 +92,6 @@ BEGIN
        ROLLBACK;
 END;
 /
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 -- 4) INSERT with multiple exception handling (example)
