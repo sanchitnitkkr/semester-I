@@ -34,7 +34,7 @@ insert into employees (e_no,e_name,bp,da,hra,total_salary,dept_id) values ( 1,'R
 
 declare
    employee_name varchar(100);
-   v_dept_id := &v_dept_id;
+   v_dept_id NUMBER := &v_dept_id;
 begin
       FOR rec IN (
          SELECT e_name FROM employees WHERE dept_id = v_dept_id
@@ -208,16 +208,17 @@ CREATE table accounts(
 
 DECLARE
    v_ename VARCHAR;
+
 BEGIN 
     DBMS_OUTPUT.PUT_LINE("Employees belonging to department with ID 10:\n");
    FOR rec IN (
       SELECT ename 
       INTO v_ename
       FROM employees
-      WHERE dept_id := &dept_id
+      WHERE dept_id = 10
    )
    loop
-     DBMS_OUTPUT.PUT_LINE(rec.ename)
+     DBMS_OUTPUT.PUT_LINE(rec.ename);
    end loop;
 END;
 /  

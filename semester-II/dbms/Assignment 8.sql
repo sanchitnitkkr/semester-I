@@ -16,7 +16,6 @@
 
 
 -- 1) Calculate and update total_salary for empno = 100
-SQL
 CREATE TABLE employees (
    empNo int primary key,
    ename varchar(100) not null,
@@ -25,6 +24,10 @@ CREATE TABLE employees (
    hra int,
    total_salary int
 );
+
+ALTER TABLE EMPLOYEES
+ADD commision INT;
+
 INSERT INTO employees (empNo, ename, basicPay, da, hra) VALUES(100, 'Jasda', 10000, 2000, 3000);
 BEGIN
    UPDATE employees
