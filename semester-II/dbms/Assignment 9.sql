@@ -60,7 +60,7 @@ insert into departments (
            'HR' );
 
 create table employees (
-   empno        int primary key,
+   empno        int primary key,  
    ename        varchar(100) not null,
    basicpay     int,
    da           int,
@@ -208,14 +208,14 @@ CREATE table accounts(
 
 DECLARE
    v_ename VARCHAR;
-
+   v_dept_id NUMBER := &v_dept_id;
 BEGIN 
-    DBMS_OUTPUT.PUT_LINE("Employees belonging to department with ID 10:\n");
+    DBMS_OUTPUT.PUT_LINE("Employees belonging to department with ID " || v_dept_id || ": ");
    FOR rec IN (
       SELECT ename 
       INTO v_ename
       FROM employees
-      WHERE dept_id = 10
+      WHERE dept_id = v_dept_id
    )
    loop
      DBMS_OUTPUT.PUT_LINE(rec.ename);

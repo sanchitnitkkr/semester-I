@@ -26,7 +26,7 @@ void insertionSort(int arr[], int size)
             j--;
         }
 
-        printArray(arr, size);
+        // printArray(arr, size);
     }
 }
 
@@ -36,6 +36,6 @@ int main()
     int size = sizeof(arr) / sizeof(int);
 
     insertionSort(arr, size);
-
+    printArray(arr,size);
     return 0;
 }
